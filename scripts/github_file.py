@@ -29,10 +29,6 @@ def github_read_file(username, repository_name, file_path, github_token=None):
 def main():
     file_content = github_read_file(username, repository_name, file_path, github_token=github_token)
     print(file_content)
-    #data = json.loads(file_content)
-    #print(data)
-    #print(data['name'])
-
 
 if __name__ == '__main__':
     main()
