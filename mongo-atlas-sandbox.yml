@@ -1,0 +1,13 @@
+---
+- name: Mongo Atlas Sandbox
+  hosts: localhost
+  tasks:
+    - name: Retrieve Variables
+      include_vars: vars/tokens.yml
+
+    - name: Execute Python Script
+      shell: "python3 scripts/github_file.py {{ github_token }}"
+
+    - name: Complete The Play
+      debug:
+        msg: "You Made It!"
