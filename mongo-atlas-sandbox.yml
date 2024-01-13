@@ -7,7 +7,8 @@
 
     - name: Execute Python Script
       shell: "python3 scripts/github_file.py {{ github_token }}"
+      register: script_output
 
     - name: Complete The Play
       debug:
-        msg: "You Made It!"
+        msg: "You Made It! Here Are The Results: {{ script_output.stdout }}"
